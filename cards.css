@@ -1,0 +1,127 @@
+.card{
+	margin: 8px 0px 16px;
+	border: 1px rgba(0,0,0,0.1) solid;
+	width: 500px;
+	padding: 16px;
+	border-radius: 3px;
+	position: relative;
+    display: flex;
+	flex-direction: row;
+	align-items: center;
+	display: inline-block;
+	float: left;
+	background: rgba(255,255,255,0.5);
+	transition: background 150ms ease-out, border-color 150ms ease-out;
+}
+.card:hover{
+	border: 1px rgba(0,0,0,0.05) solid;
+	background: #fff;
+}
+.card.has-body:before{
+	content: "";
+	position: absolute;
+	width: 18px;
+	right: 0px;
+	bottom: 0px;
+	top: 0px;
+	background-color: rgba(0,0,0,0.18);
+	opacity: 0;
+	background-image: url(ic_keyboard_arrow_up_black_18px.svg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 18px;
+	cursor: pointer;
+	transition: opacity 150ms ease-out;
+}
+.card.has-body.collapsed:before{
+	background-image: url(ic_keyboard_arrow_down_black_18px.svg);
+}
+.card:hover:before{
+	opacity: 0.5;
+}
+.card .flair{
+	position: absolute;
+	width: 3px;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	border-radius: 3px 0px 0px 3px;
+}
+.card .content{
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	position: relative;
+}
+.card .content .body{
+	margin-top: 0.5rem;
+}
+.card .content .header *, .card .content .body *{
+}
+.card .content .entity-icon {
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+.card .content .small-entity-icon {
+  height: 13px;
+}
+
+.card .content .header br{
+	display: block;
+	width: 100%;
+}
+.card .content .hr{
+	display: block;
+	height: 1rem;
+	width: 100%;
+}
+.card.collapsed .body{
+	max-height: 1rem;
+	overflow: hidden;
+	cursor: pointer;
+}
+.card.has-body.collapsed .body{
+	display: none;
+}
+.card-sponsor{
+	display: inline-block;
+	max-height: 24px;
+	max-width: 60px;
+	z-index: 1;
+	clear: both;
+	float: left;
+	margin: 8px;
+}
+body.condensed .card-sponsor{
+	max-height: 1rem;
+	margin: 8px 4px;
+	display: none;
+}
+body.condensed .card{
+	margin: 4px 0px 8px;
+	padding: 4px 8px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+body.condensed .card .content .body{
+	margin: 0px;
+	margin-top: 0.8rem;
+}
+body.condensed .card .body *, body.condensed .card .header *{
+	padding: 0px;
+	align-self: baseline;
+}
+body.dark .card{
+	background: rgba(255,255,255,0.05);
+	color: rgba(255,255,255,0.87);
+	border: 1px rgba(255,255,255,0.05) solid;
+}
+body.dark .card:hover{
+	background: rgba(255,255,255,0.1);
+	border: 1px rgba(255,255,255,0.1) solid;
+}
+.card.has-body:before{
+	background-color: rgba(255,255,255,0.25);
+}

@@ -1,0 +1,158 @@
+.card{
+	margin: 8px 0px 16px;
+	box-shadow: 0px 4px 15px rgba(0,0,0,0.14);
+	width: 500px;
+	padding: 16px;
+	border-radius: 1px;
+	position: relative;
+	overflow: hidden;
+    display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.card .flair{
+	position: absolute;
+	width: 2px;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+}
+.card .content{
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	position: relative;
+}
+.card .content .collapsed{	
+	margin-bottom: 24px;
+}
+.card .content .body{
+	margin-top: 0.5rem;
+}
+.card .content .header *, .card .content .body *{
+}
+.card .content .entity-icon {
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+.card .content .small-entity-icon {
+  height: 13px;
+}
+
+.card .content .header br{
+	display: block;
+	width: 100%;
+}
+.card .content .hr{
+	display: block;
+	height: 1rem;
+	width: 100%;
+}
+.card .body.collapsed{
+	max-height: 1rem;
+	overflow: hidden;
+	cursor: pointer;
+}
+.card .body.collapsed:after{
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+	content: "";
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 24px;
+	height: 1rem;
+}
+.card .body.collapsed:before{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	font-size: 0.9rem;
+	color: rgba(0,0,0,0.54);
+	z-index: 1;
+	content: "More";
+	background: #fff;
+	background-image: url(ic_keyboard_arrow_down_black_18px.svg);
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	padding: 0px 4px 0px 18px;
+}
+.card .body:not(.collapsed) .collapse{
+	font-size: 0.9rem;
+	color: rgba(0,0,0,0.54);
+	cursor: pointer;
+	background-color: none;
+	padding: 0px 4px 0px 18px;
+	background-image: url(ic_keyboard_arrow_up_black_18px.svg);
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+}
+.card .body.collapsed:hover:before, .body:not(.collapsed) .collapse:hover{
+	color: rgba(0,0,0,0.87);
+}
+.card .sponsor{
+	clear: both;
+	float: right;
+	display: block;
+	max-height: 24px;
+	max-width: 60px;
+	z-index: 1;
+	align-self: flex-end;
+}
+.card.condensed{
+	margin: 4px 0px 8px;
+	padding: 4px 8px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+.card.condensed .content .body{
+	margin: 0px;
+}
+.card.condensed .sponsor{
+	align-self: flex-end;
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: auto;
+	margin-left: 8px;
+	max-height: 1rem;
+}
+.card.condensed .body *, .card.condensed .header *{
+	padding: 0px;
+	align-self: baseline;
+}
+.card.condensed .body.collapsed{
+	overflow: hidden;
+	max-height: 0px;
+	cursor: pointer;
+}
+.card.condensed .body.collapsed:after{
+	height: 0px;
+}
+.card.condensed .body.collapsed:before{
+	content: "";
+}
+.card.condensed:hover .body.collapsed:before{
+	right: 0px;
+	left: auto;
+	bottom: 0;
+	top: auto;
+	content: "More";
+	color: #0091ea;
+}
+.card.condensed .body:not(.collapsed) .collapse{
+	color: #0091ea;
+	float: right;
+	margin-top: 4px;
+}
+.card.condensed .content .body p{
+	padding: 0px;
+	margin: 0px;
+}
+.card.condensed .content .header p{
+	padding: 0px;
+	margin: 0px;
+}
